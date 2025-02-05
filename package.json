@@ -35,7 +35,7 @@
     "eslint": "^9.19.0",
     "eslint-config-next": "^15.1.6",
     "prettier": "^3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.11",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "slice-machine-ui": "^2.12.3",
     "typescript": "^5.7.3"
   }
