@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+
+/* @import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities'; */
+@font-face{
+  font-family: 'alpino';
+  src: url('/fonts/Alpino-Variable.woff2') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+    --font-alpino: alpino
+}
+
