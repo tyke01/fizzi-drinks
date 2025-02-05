@@ -1,12 +1,10 @@
 import localFont from "next/font/local";
 
-
-
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 
-
-import "./globals.css"
+import "./globals.css";
+import Header from "@/components/header";
 
 const alpino = localFont({
   src: "../../public/fonts/Alpino-Variable.woff2",
@@ -22,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="font-alpino">
-      <body className="">{children}</body>
+      <body className="">
+        <Header />
+        <main>{children}</main>
+      </body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>
   );
