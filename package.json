@@ -19,7 +19,7 @@
     "@prismicio/next": "^2.0.0",
     "@prismicio/react": "^3.0.0",
     "@react-three/drei": "^9.121.4",
-    "@react-three/fiber": "^8.17.14",
+    "@react-three/fiber": "^9.0.0-rc.1",
     "@tailwindcss/postcss": "^4.0.3",
     "@types/three": "^0.173.0",
     "clsx": "^2.1.1",
