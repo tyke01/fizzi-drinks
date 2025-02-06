@@ -1,13 +1,13 @@
-import { FC } from "react";
-import { Content } from "@prismicio/client";
-import {
-  PrismicRichText,
-  PrismicText,
-  SliceComponentProps,
-} from "@prismicio/react";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { Bounded } from "@/components/bounded";
 import Button from "@/components/button";
+import { asText, Content } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
+import {
+  PrismicRichText,
+  SliceComponentProps
+} from "@prismicio/react";
+import { FC } from "react";
+import { TextSplitter } from "./text-splitter";
 
 /**
  * Props for `Hero`.
@@ -22,12 +22,17 @@ const Hero: FC<HeroProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="hero"
     >
       <div className="grid">
         <div className="grid h-screen place-items-center">
           <div className="grid auto-rows-min place-items-center text-center">
             <h1 className="hero-header text-7xl leading-[.8] font-black text-orange-500 uppercase md:text-[9rem] lg:text-[13rem]">
-              <PrismicText field={slice.primary.heading} />
+              <TextSplitter
+                text={asText(slice.primary.heading)}
+                wordDisplayStyle="block"
+                className="hero-header-word"
+              />
             </h1>
             <div className="her-subheading mt-12 text-5xl font-semibold text-sky-950 lg:text-6xl">
               <PrismicRichText field={slice.primary.subheading} />
@@ -51,7 +56,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 
           <div>
             <h2 className="text-side-heading text-6xl font-black text-balance text-sky-950 uppercase lg:text-8xl">
-              <PrismicText field={slice.primary.second_heading} />
+              <TextSplitter text={asText(slice.primary.second_heading)} />
             </h2>
 
             <div className="text-side-body mt-4 max-w-xl text-xl font-normal text-balance text-sky-950">
