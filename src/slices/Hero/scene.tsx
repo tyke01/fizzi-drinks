@@ -2,17 +2,21 @@
 
 import FloatingCan from "@/components/floating-can";
 
-import { Environment, OrbitControls } from "@react-three/drei";
+import { Environment } from "@react-three/drei";
 
+import { useStore } from "@/hooks/use-store";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { Group } from "three";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Scene = () => {
+  
+  const isReady = useStore((state) => state.isReady);
+
   const can1Ref = useRef<Group>(null);
   const can2Ref = useRef<Group>(null);
   const can3Ref = useRef<Group>(null);
@@ -38,6 +42,8 @@ const Scene = () => {
       !groupRef.current
     )
       return;
+
+    isReady();
 
     //  Set can starting location
     gsap.set(can1Ref.current.position, {
