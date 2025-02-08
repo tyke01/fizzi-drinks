@@ -161,7 +161,9 @@ const Scene = ({ sentence, flavor }: SkyDiveProps) => {
           rotationIntensity={0}
           floatIntensity={3}
           floatSpeed={3}
-        ></FloatingCan>
+        >
+          <pointLight intensity={30} color="#8C0413" decay={0.6} />
+        </FloatingCan>
       </group>
 
       {/* clouds */}
