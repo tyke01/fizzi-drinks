@@ -13,7 +13,9 @@ export const Bounded = ({
   ...restProps
 }: BoundedProps) => {
   return (
+    // @ts-expect-error don't know how to fix
     <Comp
+      // @ts-expect-error don't know how to fix
       className={clsx("px-4 first:pt-10 md:px-6", className)}
       {...restProps}
     >

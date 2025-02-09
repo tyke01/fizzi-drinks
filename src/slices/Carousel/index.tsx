@@ -6,15 +6,14 @@ import {
   PrismicText,
   SliceComponentProps,
 } from "@prismicio/react";
-import { FC, useRef, useState } from "react";
 import clsx from "clsx";
-import { Group } from "three";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { FC, useRef, useState } from "react";
+import { Group } from "three";
 
+import FloatingCan from "@/components/floating-can";
 import { SodaCanProps } from "@/components/soda-can";
 import { Center, Environment, View } from "@react-three/drei";
-import FloatingCan from "@/components/floating-can";
 import { ArrowIcon } from "./arrow-icon";
 import { WavyCircles } from "./wavy-circles";
 
